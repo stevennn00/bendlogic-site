@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BendLogic | The Precision CAD Visualizer</title>
+    <meta name="description" content="Advanced 3D CAD visualizer and conduit bending calculator for professional electricians. Master 4-point saddles, offsets, and more.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --safety-orange: #FF6B00;
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --grid-color: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* Engineering Grid Background */
+            background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
+            background-size: 30px 30px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            width: 90%;
+            padding: 40px 0;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .content {
+            flex: 1.2;
+        }
+
+        h1 {
+            font-weight: 900;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 0.95;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+        }
+
+        .orange {
+            color: var(--safety-orange);
+        }
+
+        p.sub-headline {
+            color: var(--text-dim);
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .badge img {
+            height: 60px;
+            transition: transform 0.2s ease;
+        }
+
+        .badge:hover img {
+            transform: translateY(-3px);
+        }
+
+        .coming-soon {
+            opacity: 0.4;
+            filter: grayscale(1);
+            cursor: not-allowed;
+        }
+
+        .visual {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 450px;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.8));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 80px;
+            }
+            p.sub-headline { margin: 0 auto 40px; }
+            .cta-group { justify-content: center; }
+            .visual { order: -1; } /* Image on top for mobile */
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>The Precision CAD Visualizer for <br><span class="orange">Field Electricians</span></h1>
+            <p class="sub-headline">
+                Math engine built for the field. <br>
+                Visualize, calculate, and mark complex bends instantly.
+            </p>
+            
+            <div class="cta-group">
+                <a href="YOUR_PLAY_STORE_URL" class="badge">
+                    <img src="google-play-badge.png" alt="Get it on Google Play">
+                </a>
+                
+                <div class="badge coming-soon">
+                    <img src="apple-store-badge.png" alt="App Store - Coming Soon">
+                </div>
+            </div>
+            <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 15px;">
+                Closed Test Participants — <span style="color: white; cursor: pointer;">Install Now</span>
+            </p>
+        </div>
+
+        <div class="visual">
+            <img src="hero-mockup.png" class="hero-image" alt="BendLogic App Display">
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 BendLogic App | bendlogic.app
+    </footer>
+
+</body>
+</html>
