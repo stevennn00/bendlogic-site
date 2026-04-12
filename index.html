@@ -25,10 +25,10 @@
             font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            /* Engineering Grid Background */
             background-image: radial-gradient(var(--grid-color) 1px, transparent 1px);
             background-size: 30px 30px;
             overflow-x: hidden;
@@ -41,6 +41,7 @@
             padding: 40px 0;
             gap: 60px;
             align-items: center;
+            flex-grow: 1;
         }
 
         .content {
@@ -109,7 +110,27 @@
             50% { transform: translateY(-20px); }
         }
 
-        /* Mobile Adjustments */
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 60px 20px 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            line-height: 1.6;
+        }
+
+        .footer-legal {
+            font-size: 0.7rem;
+            opacity: 0.6;
+            max-width: 500px;
+            margin: 10px auto;
+        }
+
+        .footer-link {
+            color: var(--safety-orange);
+            text-decoration: underline;
+        }
+
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
@@ -118,14 +139,7 @@
             }
             p.sub-headline { margin: 0 auto 40px; }
             .cta-group { justify-content: center; }
-            .visual { order: -1; } /* Image on top for mobile */
-        }
-
-        footer {
-            position: absolute;
-            bottom: 20px;
-            font-size: 0.8rem;
-            color: #333;
+            .visual { order: -1; }
         }
     </style>
 </head>
@@ -135,12 +149,12 @@
         <div class="content">
             <h1>The Precision CAD Visualizer for <br><span class="orange">Field Electricians</span></h1>
             <p class="sub-headline">
-                Math engine built for the field. <br>
+                Math engine built for the field. <br><br>
                 Visualize, calculate, and mark complex bends instantly.
             </p>
             
             <div class="cta-group">
-                <a href="YOUR_PLAY_STORE_URL" class="badge">
+                <a href="https://play.google.com/store/apps/details?id=com.bendlogic.app" target="_blank" class="badge">
                     <img src="google-play-badge.png" alt="Get it on Google Play">
                 </a>
                 
@@ -149,7 +163,7 @@
                 </div>
             </div>
             <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 15px;">
-                Closed Test Participants — <span style="color: white; cursor: pointer;">Install Now</span>
+                Closed Test Participants — <a href="https://play.google.com/apps/testing/com.bendlogic.app" target="_blank" style="color: white; font-weight: bold; text-decoration: underline;">Install Now</a>
             </p>
         </div>
 
@@ -158,12 +172,15 @@
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 40px 0; color: #555;">
-    <p>&copy; 2026 BendLogic App | bendlogic.app</p>
-    <p style="font-size: 0.7rem; max-width: 600px; margin: 10px auto;">
-        Google Play and the Google Play logo are trademarks of Google LLC.
-    </p>
-</footer>
+    <footer>
+        <p>&copy; 2026 BendLogic App | bendlogic.app</p>
+        <p class="footer-legal">
+            Google Play and the Google Play logo are trademarks of Google LLC.
+        </p>
+        <p style="margin-top: 15px;">
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+        </p>
+    </footer>
 
 </body>
 </html>
