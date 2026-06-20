@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BendLogic | Conduit Bending Calculator for Electricians</title>
-    <meta name="description" content="Field-ready conduit bending calculator for electricians. Calculate offsets, 3-point and 4-point saddles, rolling offsets, box fill, voltage drop, and more.">
+    <meta name="description" content="Field-ready conduit bending calculator for electricians on iOS and Android. Calculate offsets, 3-point and 4-point saddles, rolling offsets, box fill, voltage drop, and more.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -65,8 +65,15 @@
             color: var(--text-dim);
             font-size: 1.25rem;
             line-height: 1.6;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
             max-width: 500px;
+        }
+
+        .availability {
+            color: var(--text-main);
+            font-weight: 700;
+            margin-bottom: 18px;
+            letter-spacing: 0.01em;
         }
 
         .cta-group {
@@ -76,13 +83,62 @@
             flex-wrap: wrap;
         }
 
-        .badge img {
-            height: 60px;
-            transition: transform 0.2s ease;
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
         }
 
-        .badge:hover img {
+        .badge:hover {
             transform: translateY(-3px);
+        }
+
+        .badge img {
+            height: 60px;
+            display: block;
+        }
+
+        .app-store-badge {
+            height: 58px;
+            min-width: 185px;
+            padding: 0 18px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 10px;
+            background: #000000;
+            color: #ffffff;
+            box-sizing: border-box;
+            gap: 12px;
+        }
+
+        .app-store-badge:hover {
+            border-color: var(--safety-orange);
+            background: #111111;
+        }
+
+        .apple-logo {
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        .store-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.05;
+            text-align: left;
+        }
+
+        .store-small {
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.01em;
+        }
+
+        .store-large {
+            font-size: 1.12rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         .visual {
@@ -116,7 +172,7 @@
         .footer-legal {
             font-size: 0.7rem;
             opacity: 0.6;
-            max-width: 500px;
+            max-width: 600px;
             margin: 10px auto;
         }
 
@@ -131,9 +187,38 @@
                 text-align: center;
                 padding-top: 80px;
             }
-            p.sub-headline { margin: 0 auto 40px; }
-            .cta-group { justify-content: center; }
-            .visual { order: -1; }
+
+            p.sub-headline {
+                margin: 0 auto 24px;
+            }
+
+            .availability {
+                margin-bottom: 18px;
+            }
+
+            .cta-group {
+                justify-content: center;
+            }
+
+            .visual {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 460px) {
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .badge img,
+            .app-store-badge {
+                height: 56px;
+            }
+
+            .app-store-badge {
+                min-width: 180px;
+            }
         }
     </style>
 </head>
@@ -146,9 +231,19 @@
                 Built for the field.<br><br>
                 Calculate offsets, 3-point and 4-point saddles, rolling offsets, box fill, voltage drop, and more with fast visual layouts and field-ready results.
             </p>
+
+            <p class="availability">Available now on iOS and Android.</p>
             
             <div class="cta-group">
-                <a href="https://play.google.com/store/apps/details?id=com.bendlogic.app" target="_blank" class="badge">
+                <a href="https://apps.apple.com/app/id6780317167" target="_blank" rel="noopener noreferrer" class="badge app-store-badge" aria-label="Download BendLogic on the App Store">
+                    <span class="apple-logo" aria-hidden="true"></span>
+                    <span class="store-text">
+                        <span class="store-small">Download on the</span>
+                        <span class="store-large">App Store</span>
+                    </span>
+                </a>
+
+                <a href="https://play.google.com/store/apps/details?id=com.bendlogic.app" target="_blank" rel="noopener noreferrer" class="badge" aria-label="Get BendLogic on Google Play">
                     <img src="google-play-badge.png" alt="Get it on Google Play">
                 </a>
             </div>
@@ -162,6 +257,7 @@
     <footer>
         <p>&copy; 2026 BendLogic App | bendlogic.app</p>
         <p class="footer-legal">
+            Apple and the Apple logo are trademarks of Apple Inc. App Store is a service mark of Apple Inc.
             Google Play and the Google Play logo are trademarks of Google LLC.
         </p>
         <p style="margin-top: 15px;">
