@@ -3,7 +3,8 @@ import LegalShell from "@/components/LegalShell";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | BendLogic",
-  description: "Privacy Policy for the BendLogic conduit bending calculator app.",
+  description:
+    "Privacy Policy for the BendLogic conduit bending calculator app.",
   alternates: { canonical: "https://www.bendlogic.app/privacy" },
 };
 
@@ -52,14 +53,14 @@ export default function PrivacyPage() {
       </p>
       <p>
         The app is distributed through the Apple App Store and Google Play.
-        Please refer to Apple&rsquo;s and Google&rsquo;s privacy policies for how
-        they handle platform-level data.
+        Please refer to Apple&rsquo;s and Google&rsquo;s privacy policies for
+        how they handle platform-level data.
       </p>
 
       <h2>5. Data Sharing</h2>
       <p>
-        We do not sell, trade, or share any user data. All information remains on
-        your device.
+        We do not sell, trade, or share any user data. All information remains
+        on your device.
       </p>
 
       <h2>6. Security</h2>
