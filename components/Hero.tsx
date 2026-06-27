@@ -6,24 +6,26 @@ import StoreBadges from "./StoreBadges";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+const trust = ["No account required", "Works offline", "iOS & Android"];
+
 export default function Hero() {
   return (
     <section
       id="top"
-      className="bg-grid relative flex min-h-screen items-center overflow-hidden pt-28"
+      className="blueprint relative overflow-hidden bg-[var(--color-bg)] pt-32"
     >
-      {/* Ambient glows */}
-      <div className="glow left-[-10%] top-[10%] h-[420px] w-[420px] bg-[var(--color-orange)]/40" />
-      <div className="glow bottom-[-10%] right-[-5%] h-[380px] w-[380px] bg-[#ff3d00]/25" />
+      {/* Soft ambient tint to warm up the light background */}
+      <div className="glow left-[-8%] top-[-6%] h-[460px] w-[460px] bg-[var(--color-orange)]/15" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-line)] to-transparent" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-[1.15fr_0.85fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-14 px-6 pb-24 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         {/* Copy */}
         <div className="text-center lg:text-left">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease }}
-            className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-[var(--color-dim)] backdrop-blur lg:mx-0"
+            className="mx-auto mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--color-line)] bg-white px-4 py-1.5 text-xs font-semibold text-[var(--color-muted)] shadow-[var(--shadow-card)] lg:mx-0"
           >
             <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-orange)]" />
             Built by the trade, for the trade
@@ -33,18 +35,20 @@ export default function Hero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.05, ease }}
-            className="text-[clamp(2.6rem,6vw,4.6rem)] font-black uppercase leading-[0.92] tracking-[-0.03em]"
+            className="text-[clamp(2.6rem,6vw,4.5rem)] font-black uppercase leading-[0.95] tracking-[-0.03em] text-[var(--color-ink)]"
           >
-            <span className="text-gradient">Conduit bending</span>
+            Conduit bending
             <br />
-            <span className="orange-gradient">for field electricians</span>
+            <span className="text-[var(--color-orange)]">
+              for field electricians
+            </span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease }}
-            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-dim)] lg:mx-0"
+            className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-muted)] lg:mx-0"
           >
             Offsets, 3- and 4-point saddles, rolling offsets, box fill, voltage
             drop, and more — with fast visual layouts and field-ready results
@@ -57,47 +61,72 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.25, ease }}
             className="mt-9"
           >
-            <p className="mb-4 text-sm font-semibold tracking-wide text-white/80">
+            <p className="mb-4 text-sm font-semibold text-[var(--color-ink)]">
               Available now on the App Store and Google Play
             </p>
             <StoreBadges className="justify-center lg:justify-start" />
           </motion.div>
+
+          <motion.ul
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35, ease }}
+            className="mt-8 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-medium text-[var(--color-muted)] lg:justify-start"
+          >
+            {trust.map((t) => (
+              <li key={t} className="inline-flex items-center gap-2">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                  className="text-[var(--color-orange)]"
+                >
+                  <path
+                    d="M5 12 L10 17 L19 6"
+                    stroke="currentColor"
+                    strokeWidth="2.4"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                {t}
+              </li>
+            ))}
+          </motion.ul>
         </div>
 
-        {/* Phone mockup */}
+        {/* Dark showcase panel holding the app mockup */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92, y: 30 }}
+          initial={{ opacity: 0, scale: 0.94, y: 28 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.2, ease }}
-          className="relative flex justify-center"
+          className="relative"
         >
-          <div className="absolute inset-0 -z-10 mx-auto h-3/4 w-3/4 self-center rounded-full bg-[var(--color-orange)]/20 blur-[90px]" />
-          <Image
-            src="/hero-mockup.png"
-            alt="BendLogic conduit bending calculator app shown on a phone"
-            width={900}
-            height={1200}
-            priority
-            className="animate-float w-full max-w-[460px] drop-shadow-[0_40px_80px_rgba(0,0,0,0.85)]"
-          />
+          <div className="blueprint-dark relative overflow-hidden rounded-[28px] bg-gradient-to-b from-[var(--color-dark)] to-[var(--color-dark-2)] p-6 shadow-[0_30px_70px_-30px_rgba(17,24,39,0.6)] ring-1 ring-black/5 sm:p-8">
+            {/* inner orange glow */}
+            <div className="glow left-1/2 top-1/3 h-[280px] w-[280px] -translate-x-1/2 bg-[var(--color-orange)]/30" />
+
+            {/* corner blueprint ticks */}
+            <span className="absolute left-4 top-4 h-4 w-4 border-l-2 border-t-2 border-white/15" />
+            <span className="absolute right-4 top-4 h-4 w-4 border-r-2 border-t-2 border-white/15" />
+            <span className="absolute bottom-4 left-4 h-4 w-4 border-b-2 border-l-2 border-white/15" />
+            <span className="absolute bottom-4 right-4 h-4 w-4 border-b-2 border-r-2 border-white/15" />
+
+            <div className="relative z-10 flex justify-center">
+              <Image
+                src="/hero-mockup.png"
+                alt="BendLogic conduit bending calculator app shown on three phones"
+                width={900}
+                height={1200}
+                priority
+                className="animate-float w-full max-w-[440px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+              />
+            </div>
+          </div>
         </motion.div>
       </div>
-
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-[var(--color-dim)]"
-      >
-        <div className="flex h-9 w-5 items-start justify-center rounded-full border border-white/15 p-1">
-          <motion.span
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            className="h-1.5 w-1.5 rounded-full bg-[var(--color-orange)]"
-          />
-        </div>
-      </motion.div>
     </section>
   );
 }

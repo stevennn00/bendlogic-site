@@ -3,15 +3,21 @@ import StoreBadges from "./StoreBadges";
 
 export default function CTA() {
   return (
-    <section id="download" className="mx-auto max-w-6xl px-6 py-28">
+    <section className="bg-[var(--color-surface-2)] px-6 py-24 sm:py-28">
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-[var(--color-surface-2)] to-[var(--color-surface)] px-8 py-16 text-center sm:px-16">
-          <div className="glow left-1/2 top-0 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 bg-[var(--color-orange)]/40" />
+        <div
+          id="download"
+          className="relative mx-auto max-w-5xl scroll-mt-24 overflow-hidden rounded-[28px] border border-[var(--color-line)] bg-[var(--color-surface)] px-8 py-16 text-center shadow-[var(--shadow-card)] sm:px-16"
+        >
+          {/* warm tint sweep */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--color-orange-tint)] to-transparent" />
+          <div className="glow left-1/2 top-0 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/3 bg-[var(--color-orange)]/25" />
+
           <div className="relative z-10">
-            <h2 className="mx-auto max-w-2xl text-3xl font-black tracking-tight sm:text-5xl">
+            <h2 className="mx-auto max-w-2xl text-3xl font-black tracking-tight text-[var(--color-ink)] sm:text-5xl">
               Put the math in your pocket.
             </h2>
-            <p className="mx-auto mt-5 max-w-lg text-lg text-[var(--color-dim)]">
+            <p className="mx-auto mt-5 max-w-lg text-lg text-[var(--color-muted)]">
               Download BendLogic and spend less time figuring marks — and more
               time bending pipe.
             </p>

@@ -1,51 +1,53 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import Logo from "./Logo";
 
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-x-0 top-0 z-50"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        scrolled
+          ? "border-b border-[var(--color-line)] bg-white/85 backdrop-blur-md"
+          : "border-b border-transparent bg-transparent"
+      }`}
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <a href="#top" className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-orange)] shadow-[var(--shadow-glow)]">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden
-            >
-              <path
-                d="M4 18 L10 18 L10 8 L20 8"
-                stroke="#0a0a0a"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </span>
-          <span className="text-lg font-extrabold tracking-tight">
-            Bend<span className="text-[var(--color-orange)]">Logic</span>
-          </span>
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#top" aria-label="BendLogic home">
+          <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--color-dim)] sm:flex">
-          <a href="#features" className="transition-colors hover:text-white">
+        <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--color-muted)] sm:flex">
+          <a
+            href="#features"
+            className="transition-colors hover:text-[var(--color-ink)]"
+          >
             Features
           </a>
-          <a href="#tools" className="transition-colors hover:text-white">
+          <a
+            href="#tools"
+            className="transition-colors hover:text-[var(--color-ink)]"
+          >
             Tools
           </a>
           <a
             href="#download"
-            className="rounded-full bg-white/5 px-4 py-2 text-white ring-1 ring-white/10 transition-colors hover:bg-white/10"
+            className="rounded-full bg-[var(--color-orange)] px-4 py-2 font-semibold text-white shadow-[var(--shadow-glow)] transition-transform hover:-translate-y-0.5"
           >
-            Download
+            Get the app
           </a>
         </nav>
       </div>
