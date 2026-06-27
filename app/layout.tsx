@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.bendlogic.app"),
   title: "BendLogic | Conduit Bending Calculator for Electricians",
   description:
-    "BendLogic is a field-ready conduit bending calculator for electricians. Calculate offsets, 3-point saddles, 4-point saddles, rolling offsets, box fill, voltage drop, and more. Available on iPhone, iPad, and Android.",
+    "BendLogic is a field-ready conduit bending calculator for electricians. Calculate offsets, 3-point saddles, 4-point saddles, rolling offsets, box fill, voltage drop, and more. Available on iPhone and Android.",
   keywords: [
     "conduit bending calculator",
     "electrician app",
@@ -58,7 +58,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
