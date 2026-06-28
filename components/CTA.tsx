@@ -15,11 +15,10 @@ export default function CTA() {
 
           <div className="relative z-10">
             <h2 className="mx-auto max-w-2xl text-3xl font-black tracking-tight text-[var(--color-ink)] sm:text-5xl">
-              Put the math in your pocket.
+              Download Bend Logic
             </h2>
             <p className="mx-auto mt-5 max-w-lg text-lg text-[var(--color-muted)]">
-              Download BendLogic and spend less time figuring marks — and more
-              time bending pipe.
+              Available on the App Store and Google Play.
             </p>
             <StoreBadges className="mt-9 justify-center" />
           </div>

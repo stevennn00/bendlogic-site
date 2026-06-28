@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import Tools from "@/components/Tools";
+import ConduitStory from "@/components/ConduitStory";
+import MainPanel from "@/components/MainPanel";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
@@ -10,8 +10,8 @@ export default function Home() {
     <main className="relative">
       <Nav />
       <Hero />
-      <Features />
-      <Tools />
+      <ConduitStory />
+      <MainPanel />
       <CTA />
       <Footer />
     </main>

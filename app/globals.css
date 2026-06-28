@@ -91,6 +91,40 @@ body {
   animation: float 7s ease-in-out infinite;
 }
 
+/* Conduit: pulsing glow on the live signal marker */
+@keyframes marker-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.18);
+  }
+}
+
+.marker-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: marker-pulse 1.6s ease-in-out infinite;
+}
+
+/* J-box: corner screws */
+.jbox-screw {
+  position: absolute;
+  height: 8px;
+  width: 8px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 35% 30%,
+    rgba(255, 255, 255, 0.9),
+    var(--color-surface-2) 60%,
+    rgba(17, 24, 39, 0.25)
+  );
+  box-shadow: inset 0 0 0 1px rgba(17, 24, 39, 0.12);
+}
+
 /* Long-form legal copy */
 .legal h2 {
   color: var(--color-ink);
@@ -119,7 +153,8 @@ body {
 
 /* Reduced motion respect */
 @media (prefers-reduced-motion: reduce) {
-  .animate-float {
+  .animate-float,
+  .marker-pulse {
     animation: none;
   }
   html {

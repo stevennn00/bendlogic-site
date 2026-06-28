@@ -50,9 +50,8 @@ export default function Hero() {
             transition={{ duration: 0.7, delay: 0.15, ease }}
             className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-[var(--color-muted)] lg:mx-0"
           >
-            Offsets, 3- and 4-point saddles, rolling offsets, box fill, voltage
-            drop, and more — with fast visual layouts and field-ready results
-            that hold up on the job.
+            Field-ready bend layouts, mark spacing, shrink, take-up, box fill,
+            voltage drop, and NEC references — built for the jobsite.
           </motion.p>
 
           <motion.div
