@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Logo({
   tone = "ink",
   className = "",
@@ -9,14 +7,17 @@ export default function Logo({
 }) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <Image
-        src="/logo.png"
-        alt="BendLogic logo"
-        width={72}
-        height={72}
-        priority
-        className="h-9 w-9 rounded-[10px] ring-1 ring-black/10"
-      />
+      <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-[var(--color-orange)] shadow-[var(--shadow-glow)]">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M4 18 L10 18 L10 8 L20 8"
+            stroke="#ffffff"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
       <span
         className={`text-lg font-extrabold tracking-tight ${
           tone === "light" ? "text-white" : "text-[var(--color-ink)]"
