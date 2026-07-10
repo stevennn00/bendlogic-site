@@ -103,7 +103,10 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 0.2, ease }}
           className="relative"
         >
-          <div className="blueprint-dark relative overflow-hidden rounded-[28px] bg-gradient-to-b from-[var(--color-dark)] to-[var(--color-dark-2)] p-6 shadow-[0_30px_70px_-30px_rgba(17,24,39,0.6)] ring-1 ring-black/5 sm:p-8">
+          <div className="relative overflow-hidden rounded-[28px] bg-gradient-to-b from-[var(--color-dark)] to-[var(--color-dark-2)] p-6 shadow-[0_30px_70px_-30px_rgba(17,24,39,0.6)] ring-1 ring-black/5 sm:p-8">
+            {/* blueprint grid overlay — kept on its own layer so it doesn't
+                override the gradient's background-image */}
+            <div className="blueprint-dark pointer-events-none absolute inset-0" />
             {/* inner orange glow */}
             <div className="glow left-1/2 top-1/3 h-[280px] w-[280px] -translate-x-1/2 bg-[var(--color-orange)]/30" />
 
@@ -115,12 +118,12 @@ export default function Hero() {
 
             <div className="relative z-10 flex justify-center">
               <Image
-                src="/hero-mockup.png"
-                alt="BendLogic conduit bending calculator app shown on three phones"
-                width={900}
-                height={1200}
+                src="/hero-showcase.png"
+                alt="BendLogic app screens showing parallel offset layout, saddles, box fill, voltage drop, and NEC reference tools"
+                width={853}
+                height={1844}
                 priority
-                className="animate-float w-full max-w-[440px] drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
+                className="animate-float w-full max-w-[440px] rounded-2xl drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)]"
               />
             </div>
           </div>
