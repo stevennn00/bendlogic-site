@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalShell from "@/components/LegalShell";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | BendLogic",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for the BendLogic conduit bending calculator app.",
   alternates: { canonical: "https://www.bendlogic.app/privacy" },
