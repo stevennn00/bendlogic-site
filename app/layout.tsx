@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
-import { Inter } from "next/font/google";
+import { Barlow_Condensed, Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,6 +8,13 @@ const inter = Inter({
   weight: ["400", "500", "700", "800", "900"],
   display: "swap",
   variable: "--font-inter",
+});
+
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  display: "swap",
+  variable: "--font-barlow",
 });
 
 export const metadata: Metadata = {
@@ -46,7 +53,7 @@ export const metadata: Metadata = {
         url: "/hero-mockup.png",
         width: 1122,
         height: 1402,
-        alt: "BendLogic conduit bending calculator app shown on three phones",
+        alt: "Six BendLogic app screens showing conduit bending and electrical field tools",
       },
     ],
   },
@@ -92,12 +99,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${inter.variable} ${barlow.variable}`}>
       <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <a href="#content" className="skip-link">Skip to content</a>
         {children}
         <Analytics />
       </body>
