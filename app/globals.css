@@ -49,7 +49,6 @@ a { text-underline-offset: 3px; }
 .eyebrow::before { content: ""; width: 18px; height: 2px; background: currentColor; }
 .section-title { font: 700 clamp(2.6rem, 5vw, 4.5rem)/.97 var(--font-display); letter-spacing: -.025em; text-transform: uppercase; }
 .body-lead { font-size: clamp(1.06rem, 1.6vw, 1.25rem); line-height: 1.55; color: var(--color-muted); }
-.ruled { border-top: 1px solid var(--color-line); }
 .section-pad { padding-block: clamp(72px, 8vw, 120px); }
 .grid-paper {
   background-image: linear-gradient(to right, rgba(25,32,33,.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(25,32,33,.055) 1px, transparent 1px);
