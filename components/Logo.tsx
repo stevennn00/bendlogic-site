@@ -1,28 +1,11 @@
 import Image from "next/image";
 
-export default function Logo({
-  tone = "ink",
-  className = "",
-}: {
-  tone?: "ink" | "light";
-  className?: string;
-}) {
+export default function Logo({ light = false }: { light?: boolean }) {
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <Image
-        src="/logo.png"
-        alt="BendLogic logo"
-        width={72}
-        height={72}
-        priority
-        className="h-9 w-9 rounded-[10px] ring-1 ring-black/10"
-      />
-      <span
-        className={`text-lg font-extrabold tracking-tight ${
-          tone === "light" ? "text-white" : "text-[var(--color-ink)]"
-        }`}
-      >
-        Bend<span className="text-[var(--color-orange)]">Logic</span>
+    <span className="inline-flex items-center gap-2.5 whitespace-nowrap">
+      <Image src="/logo.png" alt="" width={40} height={40} priority className="h-9 w-9 rounded-[5px]" />
+      <span className={`text-[1.15rem] font-extrabold tracking-[-.04em] ${light ? "text-[var(--color-on-dark)]" : "text-[var(--color-ink)]"}`}>
+        Bend<span className={light ? "text-[#ff965d]" : "text-[var(--color-accent)]"}>Logic</span>
       </span>
     </span>
   );

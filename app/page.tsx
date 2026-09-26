@@ -1,19 +1,27 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import ConduitStory from "@/components/ConduitStory";
-import MainPanel from "@/components/MainPanel";
+import ProductProof from "@/components/ProductProof";
+import Features from "@/components/Features";
+import Tools from "@/components/Tools";
+import Spotlight from "@/components/Spotlight";
+import Workflow from "@/components/Workflow";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <>
       <Nav />
-      <Hero />
-      <ConduitStory />
-      <MainPanel />
-      <CTA />
+      <main id="content">
+        <Hero />
+        <ProductProof />
+        <Features />
+        <Tools />
+        <Spotlight />
+        <Workflow />
+        <CTA />
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

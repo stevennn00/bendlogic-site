@@ -1,29 +1,12 @@
-import Reveal from "./Reveal";
 import StoreBadges from "./StoreBadges";
 
 export default function CTA() {
   return (
-    <section className="bg-[var(--color-surface-2)] px-6 py-24 sm:py-28">
-      <Reveal>
-        <div
-          id="download"
-          className="relative mx-auto max-w-5xl scroll-mt-24 overflow-hidden rounded-[28px] border border-[var(--color-line)] bg-[var(--color-surface)] px-8 py-16 text-center shadow-[var(--shadow-card)] sm:px-16"
-        >
-          {/* warm tint sweep */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-[var(--color-orange-tint)] to-transparent" />
-          <div className="glow left-1/2 top-0 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/3 bg-[var(--color-orange)]/25" />
-
-          <div className="relative z-10">
-            <h2 className="mx-auto max-w-2xl text-3xl font-black tracking-tight text-[var(--color-ink)] sm:text-5xl">
-              Download Bend Logic
-            </h2>
-            <p className="mx-auto mt-5 max-w-lg text-lg text-[var(--color-muted)]">
-              Available on the App Store and Google Play.
-            </p>
-            <StoreBadges className="mt-9 justify-center" />
-          </div>
-        </div>
-      </Reveal>
+    <section id="download" className="scroll-mt-20 border-y border-[var(--color-line)] bg-[var(--color-accent-soft)]">
+      <div className="container grid gap-8 py-16 md:grid-cols-[1fr_auto] md:items-end md:py-20">
+        <div><p className="eyebrow">06 / Ready for the next run</p><h2 className="section-title mt-5 max-w-[720px]">Put the field guide in your pocket.</h2><p className="body-lead mt-5 max-w-[550px]">Download BendLogic for iPhone or Android and bring the calculations to the pipe.</p></div>
+        <div className="md:pb-2"><p className="technical-label mb-3 text-[var(--color-muted)]">Available now</p><StoreBadges /></div>
+      </div>
     </section>
   );
 }
