@@ -1,3 +1,12 @@
+import Link from "next/link";
+
+const guideLinks: Record<string, string> = {
+  Offsets: "/guides/conduit-offset-calculator",
+  "Rolling Offsets": "/guides/rolling-offset-conduit",
+  "3-Point Saddles": "/guides/3-point-saddle-bend",
+  "4-Point Saddles": "/guides/4-point-saddle-bend",
+};
+
 const groups = [
   { number: "01", title: "Offsets & layouts", description: "Move conduit around obstacles and keep runs aligned.", tools: ["Offsets", "Rolling Offsets", "Kicks", "Rack Layouts"] },
   { number: "02", title: "Saddles", description: "Plan your marks around what is in the way.", tools: ["3-Point Saddles", "4-Point Saddles"] },
@@ -14,7 +23,7 @@ export default function Tools() {
           {groups.map((group) => <article key={group.number} className="grid gap-4 border-b border-[var(--color-line)] py-8 sm:grid-cols-[64px_1fr]">
             <span className="technical-label pt-1 text-[var(--color-accent)]">{group.number} /</span>
             <div><h3 className="font-[var(--font-display)] text-[2rem] font-bold uppercase leading-none">{group.title}</h3><p className="mt-2 max-w-[420px] text-sm leading-relaxed text-[var(--color-muted)]">{group.description}</p>
-              <ul className="mt-6 grid gap-2 sm:grid-cols-2">{group.tools.map((tool) => <li key={tool} className="flex min-h-10 items-start gap-2 border-t border-[var(--color-line)] pt-2 text-sm font-semibold"><span aria-hidden className="text-[var(--color-accent)]">↳</span>{tool}</li>)}</ul>
+              <ul className="mt-6 grid gap-2 sm:grid-cols-2">{group.tools.map((tool) => <li key={tool} className="flex min-h-10 items-start gap-2 border-t border-[var(--color-line)] pt-2 text-sm font-semibold"><span aria-hidden className="text-[var(--color-accent)]">↳</span>{guideLinks[tool] ? <Link href={guideLinks[tool]} className="text-[var(--color-accent)] underline decoration-[var(--color-line)] hover:decoration-current">{tool}</Link> : tool}</li>)}</ul>
             </div>
           </article>)}
         </div>
