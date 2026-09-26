@@ -63,6 +63,7 @@ a { text-underline-offset: 3px; }
 .legal-copy p { margin: 0 0 1.25rem; }
 .legal-copy h2 { margin: 2.5rem 0 .7rem; color: var(--color-ink); font: 700 1.75rem/1.1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
 .legal-copy ul { margin: 0 0 1.25rem; padding-left: 1.5rem; list-style: disc; }
+.legal-copy .guide-steps { margin: 0 0 1.25rem; padding-left: 1.5rem; list-style: decimal; }
 .legal-copy li { padding-left: .25rem; margin-bottom: .5rem; }
 .legal-copy strong { color: var(--color-ink); }
 .legal-copy a { color: var(--color-accent); text-decoration: underline; font-weight: 600; }

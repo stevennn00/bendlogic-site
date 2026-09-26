@@ -27,3 +27,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# local task inputs and notes
+.seo-drafts/
+.codex-task/
